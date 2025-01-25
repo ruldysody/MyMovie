@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Google Fonts - Kaushan Script -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Japanese&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora&display=swap">
+    <!-- jQuery UI CDN -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <title>🍿My Movie🎬</title>
+    {% block head %}
+    <style>
+        /* Apply Pinyon Script font to the brand text */
+        .navbar-brand {
+            font-family: 'Lora', cursive;
+        }
+        /* Apply Noto Sans Japanese font to the body and .container */
+        body, .container {
+            font-family: 'Lora', sans-serif;
+        }
+    </style>
+    {% endblock %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100">
+    <!-- ヘッダー -->
+    <header class="py-4" style="background-color: #49969d2e;">
+        <div class="container mx-auto">
+            <h1 class="text-3xl font-bold">🍿 My Movie 🎬</h1>
+        </div>
+    </header>
+    <!-- メインコンテンツ -->
+    <main class="container mx-auto py-8">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
