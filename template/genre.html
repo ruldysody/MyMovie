@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ genre }} の映画一覧 - My Movie{% endblock %}
+
+{% block content %}
+    <h2 class="text-2xl font-bold mb-4">{{ genre }} の映画一覧</h2>
+    <a href="{{ url_for('index') }}" class="text-blue-500 mb-4 inline-block">← ジャンル一覧に戻る</a>
+    <table class="table-auto w-full bg-white shadow-md rounded">
+        <thead>
+            <tr class="bg-gray-200">
+                <th class="px-4 py-2">タイトル</th>
+                <th class="px-4 py-2">公開年</th>
+                <th class="px-4 py-2">評価</th>
+                <th class="px-4 py-2">監督</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for movie in movies %}
+            <tr>
+                <td class="border px-4 py-2">{{ movie['title'] }}</td>
+                <td class="border px-4 py-2">{{ movie['release_year'] }}</td>
+                <td class="border px-4 py-2">{{ movie['rating'] }}</td>
+                <td class="border px-4 py-2">{{ movie['director_name'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
